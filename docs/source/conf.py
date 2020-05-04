@@ -70,19 +70,20 @@ with open("docs_config.yaml", 'r') as stream:
         exit()
 
 # Check that the version of the config file is compatible with this script
+supported_version = 'v1'
 if not config["docs_config_version"]:
     print("ERROR: version field not in docs_config.yaml!")
     exit()
-elif config["docs_config_version"] != 1:
-    print("ERROR: only version 1 docs_config.yaml files supported!")
+elif config["docs_config_version"] != supported_version:
+    print("ERROR: only version %s of docs_config.yaml files supported!" % supported_version)
     exit()
 
 project = config.get('project', 'Project Name')
 copyright = config.get('copyright', 'Duckietown')
-author = config('author', 'Duck Quackermann')
+author = config.get('author', 'Duck Quackermann')
 
 # The full version, including alpha/beta/rc tags
-version = config('version', 'version')
+version = config.get('version', 'version')
 release = version
 
 # Add any paths that contain templates here, relative to this directory.
