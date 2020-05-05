@@ -1,5 +1,3 @@
-# How to build the docs
+# Common files for the building the Sphinx docs
 
-You can follow the instructions in the API documentation.
-
-TODO: Add a link when the docs are added to the book
+Works with repositories generated from the official template. Follow the instructions here (add link when documented).
