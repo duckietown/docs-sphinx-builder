@@ -1,9 +1,6 @@
-ARG ARCH
-ARG MAJOR
-ARG BASE_TAG=${MAJOR}-${ARCH}
-ARG BASE_IMAGE
+ARG BASE_IMAGE_TAG
 
-FROM ${BASE_IMAGE}:${BASE_TAG}
+FROM ${BASE_IMAGE_TAG}
 
 RUN apt-get update; apt-get install -y git
 
